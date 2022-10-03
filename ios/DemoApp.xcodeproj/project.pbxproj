@@ -14,6 +14,11 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-DemoApp-DemoAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-DemoApp-DemoAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D7CC568D0B8943378CF4E035 /* IBMPlexSansArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84899D83184E488EBFD7D921 /* IBMPlexSansArabic-Bold.ttf */; };
+		6C55E6ACE4C249D585ADF0F5 /* IBMPlexSansArabic-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A631E5D8150B4BFC86BBD175 /* IBMPlexSansArabic-Light.ttf */; };
+		EAD7616AE25A45A69AB93C66 /* IBMPlexSansArabic-Medm.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEEA402C16AF474A973D0903 /* IBMPlexSansArabic-Medm.ttf */; };
+		7647B1A21F4A4C4792160431 /* IBMPlexSansArabic-SmBld.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 776218178C8A4F23A3C973E9 /* IBMPlexSansArabic-SmBld.ttf */; };
+		4D5CF993C877413C9AE5EFD1 /* IBMPlexSansArabic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C9AC3CB6D4F4AA6861CA894 /* IBMPlexSansArabic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = DemoApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-DemoApp-DemoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp-DemoAppTests.release.xcconfig"; path = "Target Support Files/Pods-DemoApp-DemoAppTests/Pods-DemoApp-DemoAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		84899D83184E488EBFD7D921 /* IBMPlexSansArabic-Bold.ttf */ = {isa = PBXFileReference; name = "IBMPlexSansArabic-Bold.ttf"; path = "../src/assets/fonts/IBMPlexSansArabic-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A631E5D8150B4BFC86BBD175 /* IBMPlexSansArabic-Light.ttf */ = {isa = PBXFileReference; name = "IBMPlexSansArabic-Light.ttf"; path = "../src/assets/fonts/IBMPlexSansArabic-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EEEA402C16AF474A973D0903 /* IBMPlexSansArabic-Medm.ttf */ = {isa = PBXFileReference; name = "IBMPlexSansArabic-Medm.ttf"; path = "../src/assets/fonts/IBMPlexSansArabic-Medm.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		776218178C8A4F23A3C973E9 /* IBMPlexSansArabic-SmBld.ttf */ = {isa = PBXFileReference; name = "IBMPlexSansArabic-SmBld.ttf"; path = "../src/assets/fonts/IBMPlexSansArabic-SmBld.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7C9AC3CB6D4F4AA6861CA894 /* IBMPlexSansArabic.ttf */ = {isa = PBXFileReference; name = "IBMPlexSansArabic.ttf"; path = "../src/assets/fonts/IBMPlexSansArabic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +132,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				3254A8C1703544CDAE25C8A3 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +158,19 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		3254A8C1703544CDAE25C8A3 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				84899D83184E488EBFD7D921 /* IBMPlexSansArabic-Bold.ttf */,
+				A631E5D8150B4BFC86BBD175 /* IBMPlexSansArabic-Light.ttf */,
+				EEEA402C16AF474A973D0903 /* IBMPlexSansArabic-Medm.ttf */,
+				776218178C8A4F23A3C973E9 /* IBMPlexSansArabic-SmBld.ttf */,
+				7C9AC3CB6D4F4AA6861CA894 /* IBMPlexSansArabic.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +268,11 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				D7CC568D0B8943378CF4E035 /* IBMPlexSansArabic-Bold.ttf in Resources */,
+				6C55E6ACE4C249D585ADF0F5 /* IBMPlexSansArabic-Light.ttf in Resources */,
+				EAD7616AE25A45A69AB93C66 /* IBMPlexSansArabic-Medm.ttf in Resources */,
+				7647B1A21F4A4C4792160431 /* IBMPlexSansArabic-SmBld.ttf in Resources */,
+				4D5CF993C877413C9AE5EFD1 /* IBMPlexSansArabic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
