@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Dimensions, ScrollView, Text, View} from 'react-native';
 import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
@@ -11,6 +11,7 @@ import {Container} from './components/container';
 import {Typography} from './components/typography';
 import {DetailsLine} from './components/details-line';
 import {DetailsTitle} from './components/details-title';
+import {Cart} from './components/cart';
 
 //
 //
@@ -28,6 +29,8 @@ export const Item = () => {
       NativeStackNavigationProp<RootStackParamList, 'ListScreen'>
     >();
   const {params} = useRoute<RouteProp<RootStackParamList, 'ItemScreen'>>();
+
+  const [quantity, setQuantity] = useState<number>(5);
 
   if (!params) {
     return <Typography>Loading ...</Typography>;
@@ -84,6 +87,8 @@ export const Item = () => {
           </DetailsLine>
         </Container>
       </ScrollView>
+
+      <Cart quantity={quantity} update={setQuantity} />
     </React.Fragment>
   );
 };
