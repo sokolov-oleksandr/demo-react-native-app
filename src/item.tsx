@@ -4,13 +4,21 @@ import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import styled from '@emotion/native';
 
+import {faker} from '@faker-js/faker';
 import {RootStackParamList} from './stack';
 import {getImage} from './utils/image';
 import {Container} from './components/container';
 import {Typography} from './components/typography';
+import {DetailsLine} from './components/details-line';
+import {DetailsTitle} from './components/details-title';
 
 //
 //
+
+const SPEC_1 = faker.color.human();
+const SPEC_2 = faker.vehicle.vin();
+const SPEC_3 = faker.commerce.product();
+const SPEC_4 = faker.datatype.float({min: 0.1, max: 10, precision: 0.1});
 
 //
 
@@ -56,6 +64,24 @@ export const Item = () => {
           ) : (
             <Typography fontSize={18}>SAR {params.price}</Typography>
           )}
+        </Container>
+
+        <Container>
+          <Typography>{params.description}</Typography>
+        </Container>
+
+        <Container>
+          <DetailsTitle>Details</DetailsTitle>
+          <DetailsLine label="Brand">{params.brand}</DetailsLine>
+          <DetailsLine label="Color">{SPEC_1}</DetailsLine>
+          <DetailsLine label="SKU">{SPEC_2}</DetailsLine>
+
+          <Typography weight="medium" />
+          <Typography weight="medium">Specifications</Typography>
+          <DetailsLine label="Type">{SPEC_3}</DetailsLine>
+          <DetailsLine label="Weight">
+            {SPEC_4} kg
+          </DetailsLine>
         </Container>
       </ScrollView>
     </React.Fragment>
