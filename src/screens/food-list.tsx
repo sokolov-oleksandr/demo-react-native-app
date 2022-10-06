@@ -1,12 +1,14 @@
-import React from 'react';
-import {ScrollView} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import React, { memo } from 'react';
+import { FlatList, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import ListData from '@utils/fake-data';
-import {SmallFoodCard} from '@components/small-food-card';
+import { SmallFoodCard } from '@components/small-food-card';
 
 //
 //
+
+const keyExtractor = (item: IListItem): string => item.id;
 
 export interface IListItem {
   id: string;
@@ -14,19 +16,26 @@ export interface IListItem {
   description: String;
   price: string;
   salePrice: any;
-  brand: String;
+  brand: string;
 }
 
-const FoodList = () => {
+const FoodList = memo(() => {
   return (
     <SafeAreaView edges={['top', 'bottom']}>
-      <ScrollView contentContainerStyle={{paddingHorizontal: 16}}>
-        {ListData.map(item => (
-          <SmallFoodCard key={item.id} item={item} />
-        ))}
-      </ScrollView>
+      <FlatList
+        renderItem={({ item }) => <SmallFoodCard item={item} />}
+        data={ListData}
+        contentContainerStyle={styles.contentContainer}
+        keyExtractor={keyExtractor}
+      />
     </SafeAreaView>
   );
-};
+});
 
 export default FoodList;
+
+const styles = StyleSheet.create({
+  contentContainer: {
+    paddingHorizontal: 16,
+  },
+});

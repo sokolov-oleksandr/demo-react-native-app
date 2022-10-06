@@ -1,13 +1,13 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import { StyleSheet, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import styled from '@emotion/native';
-import {getImage} from '@utils/image';
-import {Typography} from '@components/typography';
-import {MainStackParamList} from '@navigation/types';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {IListItem} from '@screens/food-list';
-import {Avatar} from '@components/avatar';
+import { getImage } from '@utils/image';
+import { Typography } from '@components/typography';
+import { MainStackParamList } from '@navigation/types';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { IListItem } from '@screens/food-list';
+import { Avatar } from '@components/avatar';
 import ROUTES from '@navigation/routes';
 
 //
@@ -15,7 +15,7 @@ import ROUTES from '@navigation/routes';
 
 const thumbnailSize = 600;
 
-export const SmallFoodCard: React.FC<{item: IListItem}> = ({item}) => {
+export const SmallFoodCard: React.FC<{ item: IListItem }> = ({ item }) => {
   const nav =
     useNavigation<
       NativeStackNavigationProp<MainStackParamList, ROUTES.FOOD_DETAILS>
@@ -25,7 +25,7 @@ export const SmallFoodCard: React.FC<{item: IListItem}> = ({item}) => {
     <ListItemContainer onPress={() => nav.navigate(ROUTES.FOOD_DETAILS, item)}>
       <Avatar
         style={styles.image}
-        source={{uri: getImage(thumbnailSize, item.id)}}
+        source={{ uri: getImage(thumbnailSize, item.id) }}
       />
 
       <View style={styles.flex}>

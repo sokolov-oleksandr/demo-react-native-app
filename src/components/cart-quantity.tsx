@@ -1,7 +1,8 @@
-import React, {Dispatch, SetStateAction, useCallback} from 'react';
+import React, { Dispatch, SetStateAction, useCallback } from 'react';
 import styled from '@emotion/native';
 
-import {Typography} from './typography';
+import { Typography } from './typography';
+import { StyleSheet } from 'react-native';
 
 //
 //
@@ -9,7 +10,7 @@ import {Typography} from './typography';
 export const CartQuantity: React.FC<{
   quantity: any;
   update: Dispatch<SetStateAction<number>>;
-}> = ({quantity, update}) => {
+}> = ({ quantity, update }) => {
   const incrementQuantity = useCallback(
     () => update(currentValue => currentValue + 1),
     [update],
@@ -25,9 +26,7 @@ export const CartQuantity: React.FC<{
           <Typography color="#522973">+</Typography>
         </QuantityButton>
 
-        <Typography style={{textAlign: 'center', flex: 1}}>
-          {quantity}
-        </Typography>
+        <Typography style={styles.quantity}>{quantity}</Typography>
 
         <QuantityButton onPress={decrementQuantity} underlayColor="#EDEBF2">
           <Typography color="#522973">-</Typography>
@@ -39,6 +38,10 @@ export const CartQuantity: React.FC<{
 
 //
 //
+
+const styles = StyleSheet.create({
+  quantity: { textAlign: 'center', flex: 1 },
+});
 
 const QuantityButton = styled.TouchableHighlight({
   alignItems: 'center',

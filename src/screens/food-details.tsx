@@ -1,19 +1,19 @@
-import React, {useEffect, useCallback} from 'react';
-import {Dimensions, ScrollView} from 'react-native';
-import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import React, { useEffect, useCallback, memo } from 'react';
+import { Dimensions, ScrollView } from 'react-native';
+import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import styled from '@emotion/native';
-import {faker} from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 
-import {MainStackParamList} from '@navigation/types';
+import { MainStackParamList } from '@navigation/types';
 import ROUTES from '@navigation/routes';
 
-import {getImage} from '@utils/image';
-import {Container} from '@components/container';
-import {Typography} from '@components/typography';
-import {DetailsLine} from '@components/details-line';
-import {DetailsTitle} from '@components/details-title';
-import {Cart} from '@components/cart';
+import { getImage } from '@utils/image';
+import { Container } from '@components/container';
+import { Typography } from '@components/typography';
+import { DetailsLine } from '@components/details-line';
+import { DetailsTitle } from '@components/details-title';
+import { Cart } from '@components/cart';
 
 //
 //
@@ -21,16 +21,16 @@ import {Cart} from '@components/cart';
 const SPEC_1 = faker.color.human();
 const SPEC_2 = faker.vehicle.vin();
 const SPEC_3 = faker.commerce.product();
-const SPEC_4 = faker.datatype.float({min: 0.1, max: 10, precision: 0.1});
+const SPEC_4 = faker.datatype.float({ min: 0.1, max: 10, precision: 0.1 });
 
 //
 
-const FoodDetails = () => {
+const FoodDetails = memo(() => {
   const navigation =
     useNavigation<
       NativeStackNavigationProp<MainStackParamList, ROUTES.FOOD_LIST>
     >();
-  const {params} =
+  const { params } =
     useRoute<RouteProp<MainStackParamList, ROUTES.FOOD_DETAILS>>();
 
   const setNavigationOptions = useCallback(() => {
@@ -58,7 +58,7 @@ const FoodDetails = () => {
       <ScrollView>
         <Container>
           <ItemImage
-            source={{uri: getImage(900, params.id)}}
+            source={{ uri: getImage(900, params.id) }}
             size={Dimensions.get('screen').width * 0.9}
           />
         </Container>
@@ -92,20 +92,20 @@ const FoodDetails = () => {
           <Typography weight="medium" />
           <Typography weight="medium">Specifications</Typography>
           <DetailsLine label="Type">{SPEC_3}</DetailsLine>
-          <DetailsLine label="Weight">{SPEC_4} kg</DetailsLine>
+          <DetailsLine label="Weight">{`${SPEC_4} kg`}</DetailsLine>
         </Container>
       </ScrollView>
 
       <Cart />
     </React.Fragment>
   );
-};
+});
 
 //
 //
 export default FoodDetails;
 
-const ItemImage = styled.Image<{size: number}>(props => ({
+const ItemImage = styled.Image<{ size: number }>(props => ({
   width: props.size,
   height: props.size,
   marginVertical: 16,

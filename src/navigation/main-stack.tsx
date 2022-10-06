@@ -1,12 +1,12 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import FoodList from '@screens/food-list';
 import FoodDetails from '@screens/food-details';
-import {ThemeFont} from '@components/typography';
+import { ThemeFont } from '@components/typography';
 
 import ROUTES from './routes';
-import {MainStackParamList} from './types';
+import { MainStackParamList } from './types';
 
 //
 //
@@ -30,12 +30,12 @@ const Stack = () => {
       <RootStack.Screen
         name={ROUTES.FOOD_LIST}
         component={FoodList}
-        options={{title: 'Items'}}
+        options={{ title: 'Items' }}
       />
       <RootStack.Screen
         name={ROUTES.FOOD_DETAILS}
         component={FoodDetails}
-        options={{title: 'Item'}}
+        options={{ title: 'Item' }}
       />
     </RootStack.Navigator>
   );
