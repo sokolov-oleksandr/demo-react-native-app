@@ -3,15 +3,17 @@ import {Dimensions, ScrollView} from 'react-native';
 import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import styled from '@emotion/native';
-
 import {faker} from '@faker-js/faker';
-import {RootStackParamList} from './stack';
-import {getImage} from './utils/image';
-import {Container} from './components/container';
-import {Typography} from './components/typography';
-import {DetailsLine} from './components/details-line';
-import {DetailsTitle} from './components/details-title';
-import {Cart} from './components/cart';
+
+import {MainStackParamList} from '@navigation/types';
+import ROUTES from '@navigation/routes';
+
+import {getImage} from '../utils/image';
+import {Container} from '../components/container';
+import {Typography} from '../components/typography';
+import {DetailsLine} from '../components/details-line';
+import {DetailsTitle} from '../components/details-title';
+import {Cart} from '../components/cart';
 
 //
 //
@@ -23,12 +25,13 @@ const SPEC_4 = faker.datatype.float({min: 0.1, max: 10, precision: 0.1});
 
 //
 
-export const Item = () => {
+const Item = () => {
   const navigation =
     useNavigation<
-      NativeStackNavigationProp<RootStackParamList, 'ListScreen'>
+      NativeStackNavigationProp<MainStackParamList, ROUTES.ROOT_LIST_SCREEN>
     >();
-  const {params} = useRoute<RouteProp<RootStackParamList, 'ItemScreen'>>();
+  const {params} =
+    useRoute<RouteProp<MainStackParamList, ROUTES.LIST_SCREEN_ITEM>>();
 
   const setNavigationOptions = useCallback(() => {
     if (!params?.name) {
@@ -100,6 +103,7 @@ export const Item = () => {
 
 //
 //
+export default Item;
 
 const ItemImage = styled.Image<{size: number}>(props => ({
   width: props.size,

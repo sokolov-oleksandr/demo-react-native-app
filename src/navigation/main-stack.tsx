@@ -1,20 +1,17 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import ListScreen, {IListItem} from './screens/list';
-import {Item} from './item';
+import {ThemeFont} from '@components/typography';
+import ListScreen from '@screens/list';
+import Item from '@screens/item';
 
-import {ThemeFont} from './components/typography';
+import ROUTES from './routes';
+import {MainStackParamList} from './types';
 
 //
 //
 
-export type RootStackParamList = {
-  ListScreen: undefined;
-  ItemScreen?: IListItem;
-};
-
-const RootStack = createNativeStackNavigator<RootStackParamList>();
+const RootStack = createNativeStackNavigator<MainStackParamList>();
 
 const Stack = () => {
   return (
@@ -31,12 +28,12 @@ const Stack = () => {
         },
       }}>
       <RootStack.Screen
-        name="ListScreen"
+        name={ROUTES.ROOT_LIST_SCREEN}
         component={ListScreen}
         options={{title: 'Items'}}
       />
       <RootStack.Screen
-        name="ItemScreen"
+        name={ROUTES.LIST_SCREEN_ITEM}
         component={Item}
         options={{title: 'Item'}}
       />

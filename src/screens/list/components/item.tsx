@@ -4,10 +4,11 @@ import {useNavigation} from '@react-navigation/native';
 import styled from '@emotion/native';
 import {getImage} from '../../../utils/image';
 import {Typography} from '../../../components/typography';
-import {RootStackParamList} from '../../../stack';
+import {MainStackParamList} from '@navigation/types';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {IListItem} from '../index';
 import {Avatar} from '../../../components/avatar';
+import ROUTES from '@navigation/routes';
 
 //
 //
@@ -17,11 +18,12 @@ const thumbnailSize = 600;
 export const ListItem: React.FC<{item: IListItem}> = ({item}) => {
   const nav =
     useNavigation<
-      NativeStackNavigationProp<RootStackParamList, 'ListScreen'>
+      NativeStackNavigationProp<MainStackParamList, ROUTES.LIST_SCREEN_ITEM>
     >();
 
   return (
-    <ListItemContainer onPress={() => nav.navigate('ItemScreen', item)}>
+    <ListItemContainer
+      onPress={() => nav.navigate(ROUTES.LIST_SCREEN_ITEM, item)}>
       <Avatar
         style={styles.image}
         source={{uri: getImage(thumbnailSize, item.id)}}
