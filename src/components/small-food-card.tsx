@@ -36,7 +36,9 @@ export const SmallFoodCard: React.FC<ISmallFoodCardProps> = ({ item }) => {
       />
 
       <View style={styles.flex}>
-        <Typography weight="medium">{item.name}</Typography>
+        <Typography color={COLORS.black} weight="medium">
+          {item.name}
+        </Typography>
         {!item.salePrice ? (
           <Typography style={item.salePrice ? styles.discounted : undefined}>
             SAR {item.price}
@@ -44,7 +46,7 @@ export const SmallFoodCard: React.FC<ISmallFoodCardProps> = ({ item }) => {
         ) : null}
 
         {item.salePrice ? (
-          <Typography color={COLORS.primaryText}>
+          <Typography color={COLORS.saleText}>
             <Typography style={item.salePrice ? styles.discounted : undefined}>
               SAR {item.price}
             </Typography>
@@ -85,8 +87,9 @@ const styles = StyleSheet.create({
   },
   discounted: {
     textDecorationLine: 'line-through',
+    color: COLORS.black,
   },
   sale: {
-    color: COLORS.primaryText,
+    color: COLORS.saleText,
   },
 });

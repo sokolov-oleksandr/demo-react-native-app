@@ -49,5 +49,5 @@ const DetailsLineContent = styled(Typography)({
 });
 
 DetailsLineContent.defaultProps = {
-  fontSize: 14,
+  fontSize: FONT_SIZES.small,
 };

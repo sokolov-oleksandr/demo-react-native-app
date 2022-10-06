@@ -60,7 +60,7 @@ const FoodDetails = memo(() => {
         <Container>
           <ItemImage
             source={{ uri: getImage(900, params.id) }}
-            size={Dimensions.get('screen').width * 0.9}
+            size={Dimensions.get('screen').width - 50}
           />
         </Container>
 
@@ -83,7 +83,9 @@ const FoodDetails = memo(() => {
         </Container>
 
         <Container>
-          <Typography>{params.description}</Typography>
+          <Typography fontSize={FONT_SIZES.base}>
+            {params.description}
+          </Typography>
         </Container>
 
         <Container>
@@ -111,9 +113,9 @@ export default FoodDetails;
 const ItemImage = styled.Image<{ size: number }>(props => ({
   width: props.size,
   height: props.size,
-  marginVertical: 16,
-  paddingHorizontal: '5%',
-  borderRadius: 9,
+  borderRadius: 8,
+  marginTop: 10,
+  alignSelf: 'center',
 }));
 
 const ItemDiscountedPrice = styled(Typography)({

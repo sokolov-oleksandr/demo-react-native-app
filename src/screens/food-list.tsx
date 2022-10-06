@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { FlatList, StyleSheet } from 'react-native';
+import { FlatList } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import ListData from '@utils/fake-data';
@@ -25,7 +25,6 @@ const FoodList = memo(() => {
       <FlatList
         renderItem={({ item }) => <SmallFoodCard item={item} />}
         data={ListData}
-        contentContainerStyle={styles.contentContainer}
         keyExtractor={keyExtractor}
       />
     </SafeAreaView>
@@ -33,9 +32,3 @@ const FoodList = memo(() => {
 });
 
 export default FoodList;
-
-const styles = StyleSheet.create({
-  contentContainer: {
-    paddingHorizontal: 16,
-  },
-});
