@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {Dimensions, ScrollView, Text, View} from 'react-native';
 import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
@@ -24,7 +24,7 @@ const SPEC_4 = faker.datatype.float({min: 0.1, max: 10, precision: 0.1});
 //
 
 export const Item = () => {
-  const nav =
+  const navigation =
     useNavigation<
       NativeStackNavigationProp<RootStackParamList, 'ListScreen'>
     >();
@@ -32,13 +32,22 @@ export const Item = () => {
 
   const [quantity, setQuantity] = useState<number>(5);
 
+  const setNavigationOptions = useCallback(() => {
+    if (!params?.name) {
+      return;
+    }
+    navigation.setOptions({
+      title: params.name,
+    });
+  }, [navigation, params]);
+
+  useEffect(() => {
+    setNavigationOptions();
+  }, [setNavigationOptions]);
+
   if (!params) {
     return <Typography>Loading ...</Typography>;
   }
-
-  nav.setOptions({
-    title: params.name,
-  });
 
   //
   //
@@ -82,9 +91,7 @@ export const Item = () => {
           <Typography weight="medium" />
           <Typography weight="medium">Specifications</Typography>
           <DetailsLine label="Type">{SPEC_3}</DetailsLine>
-          <DetailsLine label="Weight">
-            {SPEC_4} kg
-          </DetailsLine>
+          <DetailsLine label="Weight">{SPEC_4} kg</DetailsLine>
         </Container>
       </ScrollView>
 
