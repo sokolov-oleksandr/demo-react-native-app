@@ -1,5 +1,6 @@
 import styled from '@emotion/native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {Alert} from 'react-native';
 
 import {Container} from './container';
 import {CartQuantity} from './cart-quantity';
