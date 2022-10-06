@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "rc": "watchman watch-del-all && yarn start --reset-cache"
   },
   "dependencies": {
     "@emotion/native": "^11.10.0",
