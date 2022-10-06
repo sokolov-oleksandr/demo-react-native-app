@@ -1,32 +1,46 @@
-import React, {Dispatch, SetStateAction} from 'react';
+import React, { Dispatch, SetStateAction, useCallback } from 'react';
+import { StyleSheet } from 'react-native';
 import styled from '@emotion/native';
 
-import {Typography} from './typography';
+import { COLORS } from '@constants/colors';
+
+import { Typography } from './typography';
 
 //
 //
 
-export const CartQuantity: React.FC<{
-  quantity: any;
+interface ICartQuantityProps {
+  quantity: number;
   update: Dispatch<SetStateAction<number>>;
-}> = ({quantity, update}) => {
+}
+
+export const CartQuantity: React.FC<ICartQuantityProps> = ({
+  quantity,
+  update,
+}) => {
+  const incrementQuantity = useCallback(
+    () => update(currentValue => currentValue + 1),
+    [update],
+  );
+  const decrementQuantity = useCallback(
+    () => update(currentValue => currentValue - 1),
+    [update],
+  );
   return (
     <QuantityContainer>
       <React.Fragment>
         <QuantityButton
-          onPress={() => update(quantity + 1)}
-          underlayColor="#EDEBF2">
-          <Typography color="#522973">+</Typography>
+          onPress={incrementQuantity}
+          underlayColor={COLORS.border}>
+          <Typography color={COLORS.secondaryText}>+</Typography>
         </QuantityButton>
 
-        <Typography style={{textAlign: 'center', flex: 1}}>
-          {quantity}
-        </Typography>
+        <Typography style={styles.quantity}>{quantity}</Typography>
 
         <QuantityButton
-          onPress={() => update(quantity + 1)}
-          underlayColor="#EDEBF2">
-          <Typography color="#522973">-</Typography>
+          onPress={decrementQuantity}
+          underlayColor={COLORS.border}>
+          <Typography color={COLORS.secondaryText}>-</Typography>
         </QuantityButton>
       </React.Fragment>
     </QuantityContainer>
@@ -35,6 +49,10 @@ export const CartQuantity: React.FC<{
 
 //
 //
+
+const styles = StyleSheet.create({
+  quantity: { textAlign: 'center', flex: 1 },
+});
 
 const QuantityButton = styled.TouchableHighlight({
   alignItems: 'center',
@@ -46,7 +64,7 @@ const QuantityButton = styled.TouchableHighlight({
 
 const QuantityContainer = styled.TouchableHighlight({
   borderWidth: 1,
-  borderColor: '#EDEBF2',
+  borderColor: COLORS.border,
   marginRight: 10,
   flex: 4,
   paddingVertical: 0,

@@ -1,7 +1,7 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 
-import Stack from './src/stack';
+import Stack from '@navigation/main-stack';
 
 //
 //

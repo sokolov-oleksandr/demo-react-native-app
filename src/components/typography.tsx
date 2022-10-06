@@ -1,5 +1,6 @@
+import { Platform, StyleSheet, TextStyle } from 'react-native';
 import styled from '@emotion/native';
-import {Platform, TextStyle} from 'react-native';
+import { FONT_SIZES } from '@constants/font-sizes';
 
 //
 //
@@ -10,14 +11,14 @@ export const Typography = styled.Text<{
   weight?: keyof typeof ThemeFont;
   fontSize?: TextStyle['fontSize'];
   color?: TextStyle['color'];
-}>(({fontSize = 16, weight = 'regular', color}) => ({
+}>(({ fontSize = FONT_SIZES.base, weight = 'regular', color }) => ({
   fontSize,
   color,
   lineHeight: fontSize * 1.5,
   ...ThemeFont[weight],
 }));
 
-export const ThemeFont: Record<string, TextStyle> = {
+export const ThemeFont = StyleSheet.create({
   light: {
     fontFamily: 'IBMPlexSansArabic-Light',
     fontWeight: isIos ? '300' : undefined,
@@ -38,4 +39,4 @@ export const ThemeFont: Record<string, TextStyle> = {
     fontFamily: 'IBMPlexSansArabic-Bold',
     fontWeight: isIos ? '700' : undefined,
   },
-};
+});

@@ -1,6 +1,6 @@
-import {faker} from '@faker-js/faker';
+import { faker } from '@faker-js/faker';
 
-import {IListItem} from '../screens/list';
+import { IListItem } from '@screens/food-list';
 
 //
 //
@@ -12,13 +12,13 @@ for (let index = 0; index < 1500; index++) {
   const priceInt = parseFloat(faker.commerce.price());
 
   list_data.push({
-    id: index,
+    id: index.toString(),
     name: faker.commerce.productName(),
     description: faker.commerce.productDescription(),
     price: price,
     salePrice: faker.helpers.maybe(
       () => faker.commerce.price(priceInt * 0.5, priceInt * 0.9),
-      {probability: 0.1},
+      { probability: 0.1 },
     ),
     brand: faker.company.name(),
   });

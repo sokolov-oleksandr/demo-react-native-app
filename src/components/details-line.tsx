@@ -1,18 +1,28 @@
 import React from 'react';
 import styled from '@emotion/native';
+import { StyleSheet } from 'react-native';
 
-import {Typography} from './typography';
+import { FONT_SIZES } from '@constants/font-sizes';
+import { Typography } from './typography';
 
 //
 //
 
-export const DetailsLine: React.FC<{
+interface IDetailsLineProps {
   label?: React.ReactNode;
   children: string;
-}> = ({label, children}) => {
+}
+
+export const DetailsLine: React.FC<IDetailsLineProps> = ({
+  label,
+  children,
+}) => {
   return (
     <DetailsLineContainer>
-      <Typography fontSize={14} style={{marginRight: 16}} weight="medium">
+      <Typography
+        fontSize={FONT_SIZES.small}
+        style={styles.label}
+        weight="medium">
         {label}
       </Typography>
 
@@ -23,6 +33,10 @@ export const DetailsLine: React.FC<{
 
 //
 //
+
+const styles = StyleSheet.create({
+  label: { marginRight: 16 },
+});
 
 const DetailsLineContainer = styled.View({
   marginVertical: 5,
@@ -35,5 +49,5 @@ const DetailsLineContent = styled(Typography)({
 });
 
 DetailsLineContent.defaultProps = {
-  fontSize: 14,
+  fontSize: FONT_SIZES.small,
 };
