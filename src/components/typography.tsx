@@ -1,3 +1,4 @@
+import { FONT_SIZES } from '@constants/font-sizes';
 import styled from '@emotion/native';
 import { Platform, TextStyle } from 'react-native';
 
@@ -10,7 +11,7 @@ export const Typography = styled.Text<{
   weight?: keyof typeof ThemeFont;
   fontSize?: TextStyle['fontSize'];
   color?: TextStyle['color'];
-}>(({ fontSize = 16, weight = 'regular', color }) => ({
+}>(({ fontSize = FONT_SIZES.base, weight = 'regular', color }) => ({
   fontSize,
   color,
   lineHeight: fontSize * 1.5,

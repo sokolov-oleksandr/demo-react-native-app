@@ -4,9 +4,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import FoodList from '@screens/food-list';
 import FoodDetails from '@screens/food-details';
 import { ThemeFont } from '@components/typography';
+import { COLORS } from '@constants/colors';
 
 import ROUTES from './routes';
 import { MainStackParamList } from './types';
+import { FONT_SIZES } from '@constants/font-sizes';
 
 //
 //
@@ -20,11 +22,11 @@ const Stack = () => {
         headerShadowVisible: false,
         headerBackTitle: '',
         headerTitleStyle: {
-          fontSize: 16,
+          fontSize: FONT_SIZES.base,
           ...(ThemeFont.medium as any),
         },
         contentStyle: {
-          backgroundColor: '#eee',
+          backgroundColor: COLORS.mainBackground,
         },
       }}>
       <RootStack.Screen

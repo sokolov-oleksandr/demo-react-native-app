@@ -3,6 +3,8 @@ import styled from '@emotion/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Alert } from 'react-native';
 
+import { COLORS } from '@constants/colors';
+
 import { Container } from './container';
 import { CartQuantity } from './cart-quantity';
 import { Typography } from './typography';
@@ -38,7 +40,7 @@ const CartContainer = styled(Container)({
 });
 
 const BuyButton = styled.TouchableHighlight({
-  backgroundColor: '#73548F',
+  backgroundColor: COLORS.buttonBackground,
   paddingVertical: 12,
   paddingHorizontal: 24,
   borderRadius: 1000,

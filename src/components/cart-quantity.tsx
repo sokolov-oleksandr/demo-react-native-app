@@ -1,8 +1,10 @@
 import React, { Dispatch, SetStateAction, useCallback } from 'react';
+import { StyleSheet } from 'react-native';
 import styled from '@emotion/native';
 
+import { COLORS } from '@constants/colors';
+
 import { Typography } from './typography';
-import { StyleSheet } from 'react-native';
 
 //
 //
@@ -22,14 +24,18 @@ export const CartQuantity: React.FC<{
   return (
     <QuantityContainer>
       <React.Fragment>
-        <QuantityButton onPress={incrementQuantity} underlayColor="#EDEBF2">
-          <Typography color="#522973">+</Typography>
+        <QuantityButton
+          onPress={incrementQuantity}
+          underlayColor={COLORS.border}>
+          <Typography color={COLORS.secondaryText}>+</Typography>
         </QuantityButton>
 
         <Typography style={styles.quantity}>{quantity}</Typography>
 
-        <QuantityButton onPress={decrementQuantity} underlayColor="#EDEBF2">
-          <Typography color="#522973">-</Typography>
+        <QuantityButton
+          onPress={decrementQuantity}
+          underlayColor={COLORS.border}>
+          <Typography color={COLORS.secondaryText}>-</Typography>
         </QuantityButton>
       </React.Fragment>
     </QuantityContainer>
@@ -53,7 +59,7 @@ const QuantityButton = styled.TouchableHighlight({
 
 const QuantityContainer = styled.TouchableHighlight({
   borderWidth: 1,
-  borderColor: '#EDEBF2',
+  borderColor: COLORS.border,
   marginRight: 10,
   flex: 4,
   paddingVertical: 0,

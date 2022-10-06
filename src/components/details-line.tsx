@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from '@emotion/native';
-
-import { Typography } from './typography';
 import { StyleSheet } from 'react-native';
+
+import { FONT_SIZES } from '@constants/font-sizes';
+import { Typography } from './typography';
 
 //
 //
@@ -13,7 +14,10 @@ export const DetailsLine: React.FC<{
 }> = ({ label, children }) => {
   return (
     <DetailsLineContainer>
-      <Typography fontSize={14} style={styles.label} weight="medium">
+      <Typography
+        fontSize={FONT_SIZES.small}
+        style={styles.label}
+        weight="medium">
         {label}
       </Typography>
 

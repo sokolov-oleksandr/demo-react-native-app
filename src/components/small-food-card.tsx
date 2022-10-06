@@ -1,14 +1,17 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import styled from '@emotion/native';
+
 import { getImage } from '@utils/image';
 import { Typography } from '@components/typography';
 import { MainStackParamList } from '@navigation/types';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { IListItem } from '@screens/food-list';
 import { Avatar } from '@components/avatar';
 import ROUTES from '@navigation/routes';
+import { COLORS } from '@constants/colors';
+import { FONT_SIZES } from '@constants/font-sizes';
 
 //
 //
@@ -37,7 +40,7 @@ export const SmallFoodCard: React.FC<{ item: IListItem }> = ({ item }) => {
         ) : null}
 
         {item.salePrice ? (
-          <Typography color="#DA2121">
+          <Typography color={COLORS.primaryText}>
             <Typography style={item.salePrice ? styles.discounted : undefined}>
               SAR {item.price}
             </Typography>
@@ -45,7 +48,7 @@ export const SmallFoodCard: React.FC<{ item: IListItem }> = ({ item }) => {
           </Typography>
         ) : null}
 
-        <Typography fontSize={14} color="#545454">
+        <Typography fontSize={FONT_SIZES.small} color={COLORS.brandText}>
           Brand: {item.name}
         </Typography>
       </View>
@@ -80,6 +83,6 @@ const styles = StyleSheet.create({
     textDecorationLine: 'line-through',
   },
   sale: {
-    color: '#DA2121',
+    color: COLORS.primaryText,
   },
 });

@@ -14,6 +14,7 @@ import { Typography } from '@components/typography';
 import { DetailsLine } from '@components/details-line';
 import { DetailsTitle } from '@components/details-title';
 import { Cart } from '@components/cart';
+import { FONT_SIZES } from '@constants/font-sizes';
 
 //
 //
@@ -64,18 +65,20 @@ const FoodDetails = memo(() => {
         </Container>
 
         <Container>
-          <Typography fontSize={18} weight="semiBold">
+          <Typography fontSize={FONT_SIZES.large} weight="semiBold">
             {params.name}
           </Typography>
 
           {params.salePrice ? (
-            <Typography fontSize={18} color="red">
+            <Typography fontSize={FONT_SIZES.large} color="red">
               <ItemDiscountedPrice>SAR {params.price}</ItemDiscountedPrice>
               {'  '}
               SAR {params.price}
             </Typography>
           ) : (
-            <Typography fontSize={18}>SAR {params.price}</Typography>
+            <Typography fontSize={FONT_SIZES.large}>
+              SAR {params.price}
+            </Typography>
           )}
         </Container>
 
@@ -118,6 +121,6 @@ const ItemDiscountedPrice = styled(Typography)({
 });
 
 ItemDiscountedPrice.defaultProps = {
-  fontSize: 18,
+  fontSize: FONT_SIZES.large,
   color: 'black',
 };
