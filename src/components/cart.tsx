@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import styled from '@emotion/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Alert } from 'react-native';
@@ -12,7 +12,7 @@ import { Typography } from './typography';
 //
 //
 
-export const Cart: React.FC<any> = () => {
+export const Cart: React.FC = memo(() => {
   const insets = useSafeAreaInsets();
   const [quantity, setQuantity] = useState<number>(5);
   return (
@@ -26,7 +26,7 @@ export const Cart: React.FC<any> = () => {
       <CartQuantity quantity={quantity} update={setQuantity} />
     </CartContainer>
   );
-};
+});
 
 //
 //

@@ -15,7 +15,7 @@ export interface IListItem {
   name: string;
   description: String;
   price: string;
-  salePrice: any;
+  salePrice?: string;
   brand: string;
 }
 

@@ -23,7 +23,7 @@ const Stack = () => {
         headerBackTitle: '',
         headerTitleStyle: {
           fontSize: FONT_SIZES.base,
-          ...(ThemeFont.medium as any),
+          ...ThemeFont.medium,
         },
         contentStyle: {
           backgroundColor: COLORS.mainBackground,

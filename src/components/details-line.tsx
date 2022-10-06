@@ -8,10 +8,15 @@ import { Typography } from './typography';
 //
 //
 
-export const DetailsLine: React.FC<{
+interface IDetailsLineProps {
   label?: React.ReactNode;
   children: string;
-}> = ({ label, children }) => {
+}
+
+export const DetailsLine: React.FC<IDetailsLineProps> = ({
+  label,
+  children,
+}) => {
   return (
     <DetailsLineContainer>
       <Typography

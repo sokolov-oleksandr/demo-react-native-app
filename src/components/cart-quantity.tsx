@@ -9,10 +9,15 @@ import { Typography } from './typography';
 //
 //
 
-export const CartQuantity: React.FC<{
-  quantity: any;
+interface ICartQuantityProps {
+  quantity: number;
   update: Dispatch<SetStateAction<number>>;
-}> = ({ quantity, update }) => {
+}
+
+export const CartQuantity: React.FC<ICartQuantityProps> = ({
+  quantity,
+  update,
+}) => {
   const incrementQuantity = useCallback(
     () => update(currentValue => currentValue + 1),
     [update],

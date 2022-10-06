@@ -18,7 +18,11 @@ import { FONT_SIZES } from '@constants/font-sizes';
 
 const thumbnailSize = 600;
 
-export const SmallFoodCard: React.FC<{ item: IListItem }> = ({ item }) => {
+interface ISmallFoodCardProps {
+  item: IListItem;
+}
+
+export const SmallFoodCard: React.FC<ISmallFoodCardProps> = ({ item }) => {
   const nav =
     useNavigation<
       NativeStackNavigationProp<MainStackParamList, ROUTES.FOOD_DETAILS>
