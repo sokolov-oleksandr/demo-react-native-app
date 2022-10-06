@@ -1,5 +1,5 @@
-import React, {useState, useEffect, useCallback} from 'react';
-import {Dimensions, ScrollView, Text, View} from 'react-native';
+import React, {useEffect, useCallback} from 'react';
+import {Dimensions, ScrollView} from 'react-native';
 import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import styled from '@emotion/native';

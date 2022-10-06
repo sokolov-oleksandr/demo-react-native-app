@@ -21,7 +21,9 @@ const ListScreen = () => {
   return (
     <SafeAreaView edges={['top', 'bottom']}>
       <ScrollView contentContainerStyle={{paddingHorizontal: 16}}>
-        {ListData.map(item => <ListItem key={item.id} item={item} />)}
+        {ListData.map(item => (
+          <ListItem key={item.id} item={item} />
+        ))}
       </ScrollView>
     </SafeAreaView>
   );
