@@ -2,7 +2,7 @@ import React from 'react';
 import {ScrollView} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
-import ListData from '../../utils/fake-data';
+import ListData from '@utils/fake-data';
 import {ListItem} from './components/item';
 
 //

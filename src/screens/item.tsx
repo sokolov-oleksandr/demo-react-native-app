@@ -8,12 +8,12 @@ import {faker} from '@faker-js/faker';
 import {MainStackParamList} from '@navigation/types';
 import ROUTES from '@navigation/routes';
 
-import {getImage} from '../utils/image';
-import {Container} from '../components/container';
-import {Typography} from '../components/typography';
-import {DetailsLine} from '../components/details-line';
-import {DetailsTitle} from '../components/details-title';
-import {Cart} from '../components/cart';
+import {getImage} from '@utils/image';
+import {Container} from '@components/container';
+import {Typography} from '@components/typography';
+import {DetailsLine} from '@components/details-line';
+import {DetailsTitle} from '@components/details-title';
+import {Cart} from '@components/cart';
 
 //
 //

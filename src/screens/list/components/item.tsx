@@ -2,12 +2,12 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import styled from '@emotion/native';
-import {getImage} from '../../../utils/image';
-import {Typography} from '../../../components/typography';
+import {getImage} from '@utils/image';
+import {Typography} from '@components/typography';
 import {MainStackParamList} from '@navigation/types';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {IListItem} from '../index';
-import {Avatar} from '../../../components/avatar';
+import {IListItem} from '@screens/list';
+import {Avatar} from '@components/avatar';
 import ROUTES from '@navigation/routes';
 
 //
