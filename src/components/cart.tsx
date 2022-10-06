@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import styled from '@emotion/native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {Alert} from 'react-native';
@@ -9,9 +10,9 @@ import {Typography} from './typography';
 //
 //
 
-export const Cart: React.FC<any> = ({quantity, update}) => {
+export const Cart: React.FC<any> = () => {
   const insets = useSafeAreaInsets();
-
+  const [quantity, setQuantity] = useState<number>(5);
   return (
     <CartContainer style={{paddingBottom: Math.max(insets.bottom, 20)}}>
       <BuyButton
@@ -20,7 +21,7 @@ export const Cart: React.FC<any> = ({quantity, update}) => {
         <Typography color="white">Buy Now</Typography>
       </BuyButton>
 
-      <CartQuantity quantity={quantity} update={update} />
+      <CartQuantity quantity={quantity} update={setQuantity} />
     </CartContainer>
   );
 };

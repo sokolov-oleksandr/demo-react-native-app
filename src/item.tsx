@@ -30,8 +30,6 @@ export const Item = () => {
     >();
   const {params} = useRoute<RouteProp<RootStackParamList, 'ItemScreen'>>();
 
-  const [quantity, setQuantity] = useState<number>(5);
-
   const setNavigationOptions = useCallback(() => {
     if (!params?.name) {
       return;
@@ -95,7 +93,7 @@ export const Item = () => {
         </Container>
       </ScrollView>
 
-      <Cart quantity={quantity} update={setQuantity} />
+      <Cart />
     </React.Fragment>
   );
 };
