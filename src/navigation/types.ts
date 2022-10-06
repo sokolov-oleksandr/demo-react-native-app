@@ -1,7 +1,7 @@
-import { IListItem } from '@screens/list';
+import { IListItem } from '@screens/food-list';
 import ROUTES from './routes';
 
 export type MainStackParamList = {
-	[ROUTES.ROOT_LIST_SCREEN]: undefined;
-	[ROUTES.LIST_SCREEN_ITEM]: IListItem;
+	[ROUTES.FOOD_LIST]: undefined;
+	[ROUTES.FOOD_DETAILS]: IListItem;
 };

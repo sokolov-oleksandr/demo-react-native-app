@@ -3,7 +3,7 @@ import {ScrollView} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 import ListData from '@utils/fake-data';
-import {ListItem} from './components/item';
+import {SmallFoodCard} from '@components/small-food-card';
 
 //
 //
@@ -17,16 +17,16 @@ export interface IListItem {
   brand: String;
 }
 
-const ListScreen = () => {
+const FoodList = () => {
   return (
     <SafeAreaView edges={['top', 'bottom']}>
       <ScrollView contentContainerStyle={{paddingHorizontal: 16}}>
         {ListData.map(item => (
-          <ListItem key={item.id} item={item} />
+          <SmallFoodCard key={item.id} item={item} />
         ))}
       </ScrollView>
     </SafeAreaView>
   );
 };
 
-export default ListScreen;
+export default FoodList;

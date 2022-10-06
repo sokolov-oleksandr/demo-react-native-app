@@ -6,7 +6,7 @@ import {getImage} from '@utils/image';
 import {Typography} from '@components/typography';
 import {MainStackParamList} from '@navigation/types';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {IListItem} from '@screens/list';
+import {IListItem} from '@screens/food-list';
 import {Avatar} from '@components/avatar';
 import ROUTES from '@navigation/routes';
 
@@ -15,15 +15,14 @@ import ROUTES from '@navigation/routes';
 
 const thumbnailSize = 600;
 
-export const ListItem: React.FC<{item: IListItem}> = ({item}) => {
+export const SmallFoodCard: React.FC<{item: IListItem}> = ({item}) => {
   const nav =
     useNavigation<
-      NativeStackNavigationProp<MainStackParamList, ROUTES.LIST_SCREEN_ITEM>
+      NativeStackNavigationProp<MainStackParamList, ROUTES.FOOD_DETAILS>
     >();
 
   return (
-    <ListItemContainer
-      onPress={() => nav.navigate(ROUTES.LIST_SCREEN_ITEM, item)}>
+    <ListItemContainer onPress={() => nav.navigate(ROUTES.FOOD_DETAILS, item)}>
       <Avatar
         style={styles.image}
         source={{uri: getImage(thumbnailSize, item.id)}}

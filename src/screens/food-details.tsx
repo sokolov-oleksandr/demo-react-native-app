@@ -25,13 +25,13 @@ const SPEC_4 = faker.datatype.float({min: 0.1, max: 10, precision: 0.1});
 
 //
 
-const Item = () => {
+const FoodDetails = () => {
   const navigation =
     useNavigation<
-      NativeStackNavigationProp<MainStackParamList, ROUTES.ROOT_LIST_SCREEN>
+      NativeStackNavigationProp<MainStackParamList, ROUTES.FOOD_LIST>
     >();
   const {params} =
-    useRoute<RouteProp<MainStackParamList, ROUTES.LIST_SCREEN_ITEM>>();
+    useRoute<RouteProp<MainStackParamList, ROUTES.FOOD_DETAILS>>();
 
   const setNavigationOptions = useCallback(() => {
     if (!params?.name) {
@@ -103,7 +103,7 @@ const Item = () => {
 
 //
 //
-export default Item;
+export default FoodDetails;
 
 const ItemImage = styled.Image<{size: number}>(props => ({
   width: props.size,
